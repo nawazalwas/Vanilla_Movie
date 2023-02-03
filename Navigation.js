@@ -74,7 +74,7 @@ export function Navigation() {
                         }
                         const button6$3 = createElement("button", { class: "navigation_container_right_search_wrapper_search_button", type: "submit" });
                         {
-                            const i7 = createElement("i", { class: "flaticon-tool" });
+                            const i7 = createElement("i", { class: "fa fa-search" });
                             button6$3.append(i7);
                         }
                         div5.append(div6$1, input6$2, button6$3);

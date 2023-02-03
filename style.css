@@ -190,7 +190,10 @@
     border-bottom-right-radius: 10px;
 }
 
-.navigation_container_right_search_wrapper_search_button>i {}
+.navigation_container_right_search_wrapper_search_button>i {
+    color: white;
+    font-size: 24px;
+}
 
 .navigation_container_sidenav {
     position: absolute;
@@ -448,4 +451,94 @@
     -moz-transition: all 0.5s;
     transition: all 0.5s;
     margin: 0px 10px;
+}
+
+.details{}
+.details_banner{
+    padding-top: 120px;
+}
+.details_banner_wrapper{}
+.details_banner_wrapper_video{
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.details_info{}
+.details_info_container{
+    
+}
+.details_info_container_description{
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+}
+.details_info_container_description_tags{
+    
+}
+.details_info_container_description_tags_list{
+    list-style: none;
+    display: flex;
+    /* column-gap: 30px; */
+}
+.details_info_container_description_tags_list_item{
+    border: 2px solid white;
+    padding: 0.25rem 0.75rem;
+    text-align: center;
+    border-radius: 1rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.details_info_container_description_text{
+    letter-spacing: .03125em;
+    line-height: 1.5rem;
+    vertical-align: baseline;
+}
+.details_info_container_description_creators{
+    display: flex;
+}
+.details_info_container_description_creators_heading{
+    padding: 0.75rem 0.75rem 0 0;
+    text-align: start;
+    letter-spacing: .00937em;
+    line-height: 1.5rem;
+    font-weight: 500;
+    -webkit-font-smoothing: auto;
+}
+.details_info_container_description_creators_list{
+    list-style: none;
+    display: flex;
+    padding: 0.75rem 0.75rem 0 0;
+    text-align: start;
+    letter-spacing: .00937em;
+    line-height: 1.5rem;
+    font-weight: 500;
+    -webkit-font-smoothing: auto;
+    vertical-align: middle;
+    color: blue;
+    font-weight: 400;
+}
+
+.details_info_container_description_creators_list li:not(:first-child)::before {
+    display: inline-block;
+    margin: 0 0.5rem 0.2rem;
+    content: "";
+    font-size: 1rem;
+    line-height: .5rem;
+    padding: 1px;
+    border-radius: 50%;
+    vertical-align: middle;
+    background-color: currentColor;
+    color:white
+}
+.details_info_container_description_creators_list_item{
+    
+}
+.details_info_container_description_stars{
+    
+}
+.details_info_container_description_misc{
+    
+}
+.details_info_container_rating{
+    
 }
