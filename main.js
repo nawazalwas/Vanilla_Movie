@@ -1,15 +1,10 @@
-import { Body } from "./Body/Body.js";
-import { Details } from "./Details/Details.js";
-import { Navigation } from "./Header&Footer/Navigation.js";
-import { Footer } from "./Header&Footer/Footer.js";
-import { TheaterHall } from "./TheaterHall/TheaterHall.js";
+import { App } from "./App/App.js";
 
-const root = document.getElementById("root");
+export const root = document.getElementById("root");
 
 
 
-
-root.append(Navigation(),TheaterHall(),Footer());
+root.append(App());
 
 export function createElement(tag, attr = {}) {
     const ele = document.createElement(tag);
@@ -24,4 +19,3 @@ export function createElement(tag, attr = {}) {
     return ele;
 }
 
-console.log(Navigation());

@@ -1,9 +1,15 @@
+import { Navigation } from "../Header&Footer/Navigation.js";
 import { createElement } from "../main.js";
+import { TheaterHall } from "../TheaterHall/TheaterHall.js";
 
 
 
 
 export function TheaterAddress(title, address) {
+    function renderTheaterHall(hallPage){
+        
+        root.replaceChild(hallPage,root.children[0]);
+    }
     const div1 = createElement("div", { class: "theaters_right_container" });
     {
         const div2$1 = createElement("div", { class: "theaters_right_container_address" });
@@ -29,6 +35,12 @@ export function TheaterAddress(title, address) {
             const button3 = createElement("button", { class: "theaters_right_container_next_btn" });
             button3.innerHTML = "Book Ticket";
             div2$3.append(button3);
+
+            button3.addEventListener("click",()=>{
+                const fragment = document.createDocumentFragment();
+                fragment.append(Navigation(),TheaterHall());
+                renderTheaterHall(fragment);
+            });
 
         }
 

@@ -1,11 +1,12 @@
 import { createElement } from "../main.js";
 import { database } from "../api.js";
 import { Carousel } from "../Carousel/Carousel.js";
+import { Details } from "../Details/Details.js";
 
 
 
 
-export function Body() {
+export function Body(renderDetails) {
     let banner;
     function handleBanner(img){
         banner.style.backgroundImage = `url(${img})`;
@@ -36,6 +37,9 @@ export function Body() {
                         const img = createElement("img",{src:movie.imgUrl,id:idx});
                         div.append(img);
                         arr.push(div);
+                        div.addEventListener("click",()=>{
+                            renderDetails(Details());
+                        });
                         
                     });
                     //never assign one nodes to two differen parent

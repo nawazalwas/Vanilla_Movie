@@ -37,8 +37,8 @@ export function Details() {
                     poster: "images/Poster/Indiana-Jones5.avif"
                 });
                 {
-                    const source5$1 = createElement("source", { type: "video/mp4", src: "https://imdb-video.media-imdb.com/vi2281030937/1434659607842-pgv4ql-1669930118583.mp4?Expires=1675451534&Signature=ITIemCrsDpFdh6DEqC85Gnp8vM8g1Icyw~L8Me1m9LmV2VfeZUMGX3aauP49pYHVpvmJ9MWG8BnYIiph~FodItytJGLA8m97fwLNqq~0XlMfG7EOV01puH8fZ0lSerdbd6AFccaT0bDjJfR-5GeWDWVgs8eWmH2rOyk2vTBMivtGZNbktoJI7OGIj8sSyD~l2BiSjY07nTaa~~63ZRBQhVnGdCAb5kCE4Z1umS6dqePL43vs4uZKW0w7XQQM~0ZmoWEMnLW8NZmHyOC3o0qN-YsPVeS99e~MsPgTRHcQrFlpxXEG54MraT52AJTLv0w2Xv-AOyS91lwkHCnCkSSZlw__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA" });
-                    const source5$2 = createElement("source", { type: "video/ogg", src: "https://imdb-video.media-imdb.com/vi2281030937/1434659607842-pgv4ql-1669930118583.mp4?Expires=1675451534&Signature=ITIemCrsDpFdh6DEqC85Gnp8vM8g1Icyw~L8Me1m9LmV2VfeZUMGX3aauP49pYHVpvmJ9MWG8BnYIiph~FodItytJGLA8m97fwLNqq~0XlMfG7EOV01puH8fZ0lSerdbd6AFccaT0bDjJfR-5GeWDWVgs8eWmH2rOyk2vTBMivtGZNbktoJI7OGIj8sSyD~l2BiSjY07nTaa~~63ZRBQhVnGdCAb5kCE4Z1umS6dqePL43vs4uZKW0w7XQQM~0ZmoWEMnLW8NZmHyOC3o0qN-YsPVeS99e~MsPgTRHcQrFlpxXEG54MraT52AJTLv0w2Xv-AOyS91lwkHCnCkSSZlw__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA" });
+                    const source5$1 = createElement("source", { type: "video/mp4", src: "src/videos/101.mp4" });
+                    const source5$2 = createElement("source", { type: "video/ogg", src: "src/videos/101.mp4" });
 
                     video4.append(source5$1, source5$2);
                 }
