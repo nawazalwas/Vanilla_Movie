@@ -1,4 +1,5 @@
 import { createElement } from "../main.js";
+import { Sidebar } from "./Sidebar.js";
 
 
 export function Navigation() {
@@ -24,7 +25,7 @@ export function Navigation() {
             {
                 const div4$1 = createElement("div", { class: "navigation_container_right_sidebar" });
                 {
-                    const button5 = createElement("button", { class: "navigation_container_right_sidebar_button", type: "button" });
+                    const button5 = createElement("button", {class: "navigation_container_right_sidebar_button", type: "button" });
                     {
                         const i6 = createElement("i", { class: "fa-sharp fa-solid fa-bars"});
                         button5.append(i6);
@@ -40,7 +41,7 @@ export function Navigation() {
                         {
                             const li7 = createElement("li");
                             {
-                                const a8 = createElement("a", { href: "#", class: "navigation_container_right_login_wrapper_link", "data-text": "sign up", "data-toggle": "modal", "data-target": "#myModal" });
+                                const a8 = createElement("a", { href: "index.html", class: "navigation_container_right_login_wrapper_link", "data-text": "sign up", "data-toggle": "modal", "data-target": "#myModal" });
                                 {
                                     const span9$1 = createElement("span", { class: "navigation_container_right_login_wrapper_link_line1" });
                                     span9$1.innerHTML = "Hello Guest";
@@ -105,7 +106,7 @@ export function Navigation() {
                         listarr.forEach((ele) => {
                             const li6 = createElement("li", { class: "navigation_container_left_menu_nav_wrapper_ul_li" });
                             {
-                                const a7 = createElement("a", { href: "#" });
+                                const a7 = createElement("a", { href: "index.html" });
                                 a7.innerHTML = ele;
                                 li6.append(a7);
                             }
@@ -121,7 +122,7 @@ export function Navigation() {
             div2$2.append(nav3);
 
         }
-        div1.append(div2$1, div2$2);
+        div1.append(div2$1, div2$2,Sidebar());
     }
 
 

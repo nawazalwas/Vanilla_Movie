@@ -71,6 +71,7 @@ body {
     background-color: #333;
     color: blue;
     box-shadow: 0px 20px 20px 0px #000000cc;
+    border-top: 1px solid blue;
 }
 
 .navigation_container_left_menu_nav {
@@ -103,7 +104,7 @@ body {
 }
 
 .navigation_container_left_menu_nav_wrapper_ul_li>a {
-    /* color: white; */
+    color: blue;
     text-decoration: none;
     font-weight: 800;
 }
