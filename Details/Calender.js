@@ -1,5 +1,5 @@
-import { Carousel } from "./Carousel.js";
-import { createElement } from "./main.js";
+import { Carousel } from "../Carousel/Carousel.js";
+import { createElement } from "../main.js";
 
 
 

@@ -1,7 +1,7 @@
-import { database } from "./api.js";
+import { database } from "../api.js";
 import { Calender } from "./Calender.js";
-import { Carousel } from "./Carousel.js";
-import { createElement } from "./main.js";
+import { Carousel } from "../Carousel/Carousel.js";
+import { createElement } from "../main.js";
 import { Theaters } from "./Theaters.js";
 
 

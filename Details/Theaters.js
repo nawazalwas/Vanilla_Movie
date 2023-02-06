@@ -1,4 +1,4 @@
-import { createElement } from "./main.js";
+import { createElement } from "../main.js";
 import { TheaterAddress } from "./TheaterAddress.js";
 
 

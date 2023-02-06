@@ -1,17 +1,15 @@
-import { Body } from "./Body.js";
-import { Calender } from "./Calender.js";
-import { Carousel } from "./Carousel.js";
-import { Details } from "./Details.js";
-import { Footer } from "./Footer.js";
-import { Navigation } from "./Navigation.js";
-import { TheaterHall } from "./TheaterHall.js";
+import { Body } from "./Body/Body.js";
+import { Details } from "./Details/Details.js";
+import { Navigation } from "./Header&Footer/Navigation.js";
+import { Footer } from "./Header&Footer/Footer.js";
+import { TheaterHall } from "./TheaterHall/TheaterHall.js";
 
 const root = document.getElementById("root");
 
 
 
 
-root.append(Navigation(),Body(),Footer());
+root.append(Navigation(),TheaterHall(),Footer());
 
 export function createElement(tag, attr = {}) {
     const ele = document.createElement(tag);

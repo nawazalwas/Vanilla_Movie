@@ -1,4 +1,4 @@
-import { createElement } from "./main.js";
+import { createElement } from "../main.js";
 
 
 export function Carousel(title,imageArr = [],item_per_screen,length ) {

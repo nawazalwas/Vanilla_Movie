@@ -1,4 +1,4 @@
-import { createElement } from "./main.js";
+import { createElement } from "../main.js";
 import { TheaterHallSection } from "./TheaterHallSection.js";
 
 
@@ -38,7 +38,6 @@ export function TheaterHall() {
         for (const key in cart) {
             price += (cart[key].length) * (key - 0);
         }
-        console.log(price);
         const div = createElement("div", { class: "hall_seat_price" });
         {
             var button = createElement("button", { class: "hall_seat_price_button" });

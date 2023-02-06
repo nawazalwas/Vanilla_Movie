@@ -1,6 +1,6 @@
-import { createElement } from "./main.js";
-import { database } from "./api.js";
-import { Carousel } from "./Carousel.js";
+import { createElement } from "../main.js";
+import { database } from "../api.js";
+import { Carousel } from "../Carousel/Carousel.js";
 
 
 
