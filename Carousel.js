@@ -1,11 +1,11 @@
 import { createElement } from "./main.js";
 
 
-export function Carousel(title,imageArr = [], autoplay = false, infintyloop = false) {
+export function Carousel(title,imageArr = [],item_per_screen,length ) {
     //webdevsimplifited;
     let handle;
-    let index = 0, item_per_screen = 5;
-    let arrLength = imageArr.length;
+    let index = 0;
+    let arrLength = length;
     let bars = Math.ceil(arrLength/item_per_screen);
     let arrOfBarNodes = [];
 
@@ -46,11 +46,7 @@ export function Carousel(title,imageArr = [], autoplay = false, infintyloop = fa
                 --slider - index: 0; */
                 div3$2.style.setProperty('--items-per-screen', item_per_screen);
                 div3$2.style.setProperty('--slider-index', index);
-                imageArr.forEach((url,idx) => {
-                    const img4 = createElement("img", { src: url,id:idx});
-                    div3$2.append(img4);
-                    
-                });
+                div3$2.append(...imageArr);
             }
             const button3$3 = createElement("div", { class: "handle right-handle" });
             {

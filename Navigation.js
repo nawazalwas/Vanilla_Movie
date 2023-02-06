@@ -26,8 +26,8 @@ export function Navigation() {
                 {
                     const button5 = createElement("button", { class: "navigation_container_right_sidebar_button", type: "button" });
                     {
-                        const img6 = createElement("img", { src: "images/header/bars.png", alt: "bar_png" });
-                        button5.append(img6);
+                        const i6 = createElement("i", { class: "fa-sharp fa-solid fa-bars"});
+                        button5.append(i6);
                     }
                     div4$1.append(button5);
 

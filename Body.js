@@ -6,34 +6,40 @@ import { Carousel } from "./Carousel.js";
 
 
 export function Body() {
-    const movieArr = [];
-
-    function api() {
-        database.forEach((ele) => {
-            movieArr.push(ele.imgUrl);
-        });
+    let banner;
+    function handleBanner(img){
+        banner.style.backgroundImage = `url(${img})`;
 
     }
-    api();
+    
     const div1 = createElement("div", { class: "body" });
     {
         const div2$1 = createElement("div", { class: "banner" });
         {
             const div3 = createElement("div",{class:"banner_container"});
             {
-                const img4 = createElement("img",{class:"banner_container_img",src:"images/banner/Marvels-Avengers.webp"});
-                div3.append(img4);
+                const div4 = banner = createElement("div",{class:"banner_container_img",style:`background-image:url(${"images/banner/Marvels-Avengers.webp"})`});
+                div3.append(div4);
             }
             div2$1.append(div3);
 
         }
         const div2$2 = createElement("div", { class: "catalog" });
         {
-            let bannerArr = [{ title: "Trending", moviesList: movieArr }, { title: "Upcoming", moviesList: movieArr }, { title: "Romantic", moviesList: movieArr }, { title: "Thrilling", moviesList: movieArr }, { title: "Horror", moviesList: movieArr }, { title: "Action", moviesList: movieArr }, { title: "South Action", moviesList: movieArr }, { title: "Bhojpuri", moviesList: movieArr }];
+            let bannerArr = [{ title: "Trending", moviesList: database }, { title: "Upcoming", moviesList: database }, { title: "Romantic", moviesList: database }, { title: "Thrilling", moviesList: database }, { title: "Horror", moviesList: database }, { title: "Action", moviesList: database }, { title: "South Action", moviesList: database }, { title: "Bhojpuri", moviesList: database }];
             bannerArr.forEach((ele) => {
                 const div3 = createElement("div", { class: "catalog_wrapper" });
                 {
-                    div3.append(Carousel(ele.title, ele.moviesList));
+                    const arr = [];
+                    ele.moviesList.forEach((movie,idx) => {
+                        const div = createElement("div");
+                        const img = createElement("img",{src:movie.imgUrl,id:idx});
+                        div.append(img);
+                        arr.push(div);
+                        
+                    });
+                    //never assign one nodes to two differen parent
+                    div3.append(Carousel(ele.title, arr,4,arr.length));
                 }
                 div2$2.append(div3);
 

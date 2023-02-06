@@ -1,19 +1,21 @@
 export const database = [
-    { name: '21 Jump Street', imgUrl: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRLCqM8Ispa4waG8tNLPdy6rtiJFOEZUZxdzP-y_BQzfgo953Gb' },
-    { name: '22 Jump Street', imgUrl: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQaoamRKQDYxVXvXg6LUl6brQmMdFbpZvOQ2G_nD6u5uq16tiVh' },
-    { name: 'Cars', imgUrl: 'https://upload.wikimedia.org/wikipedia/en/3/34/Cars_2006.jpg' },
-    { name: 'Cars 2', imgUrl: 'https://upload.wikimedia.org/wikipedia/en/7/7f/Cars_2_Poster.jpg' },
-    { name: 'Cars 3', imgUrl: 'https://lumiere-a.akamaihd.net/v1/images/p_cars3_19643_3ab8aca1.jpeg' },
-    { name: '21 Jump Street', imgUrl: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRLCqM8Ispa4waG8tNLPdy6rtiJFOEZUZxdzP-y_BQzfgo953Gb' },
-    { name: '22 Jump Street', imgUrl: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQaoamRKQDYxVXvXg6LUl6brQmMdFbpZvOQ2G_nD6u5uq16tiVh' },
-    { name: 'Cars', imgUrl: 'https://upload.wikimedia.org/wikipedia/en/3/34/Cars_2006.jpg' },
-    { name: 'Cars 2', imgUrl: 'https://upload.wikimedia.org/wikipedia/en/7/7f/Cars_2_Poster.jpg' },
-    { name: 'Cars 3', imgUrl: 'https://lumiere-a.akamaihd.net/v1/images/p_cars3_19643_3ab8aca1.jpeg' },
-    { name: '21 Jump Street', imgUrl: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRLCqM8Ispa4waG8tNLPdy6rtiJFOEZUZxdzP-y_BQzfgo953Gb' },
-    { name: '22 Jump Street', imgUrl: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQaoamRKQDYxVXvXg6LUl6brQmMdFbpZvOQ2G_nD6u5uq16tiVh' },
-    { name: 'Cars', imgUrl: 'https://upload.wikimedia.org/wikipedia/en/3/34/Cars_2006.jpg' },
-    { name: 'Cars 2', imgUrl: 'https://upload.wikimedia.org/wikipedia/en/7/7f/Cars_2_Poster.jpg' },
-    { name: 'Cars 3', imgUrl: 'https://lumiere-a.akamaihd.net/v1/images/p_cars3_19643_3ab8aca1.jpeg' }
+    { name: 'Ant-Man and the Wasp: Quantumania', imgUrl: 'images/Poster/ant-man-quantumania.webp' },
+    { name: 'Fast X', imgUrl: 'images/Poster/fast-x.jpg' },
+    { name: 'Indiana Jones and the Dial of Destiny', imgUrl: 'images/Poster/Indiana-Jones5.avif' },
+    { name: 'John Wick 4', imgUrl: 'images/Poster/john-wick-4.avif' },
+    { name: 'Mission: Impossible 7', imgUrl: 'images/Poster/mission-impossible.jpg' },
+    { name: 'Star Trek 4', imgUrl: 'images/Poster/Star-Trek-4.jpg' },
+    { name: 'Transformers: Rise of the Beasts', imgUrl: 'images/Poster/transformer.webp' },
+    { name: 'Ant-Man and the Wasp: Quantumania', imgUrl: 'images/Poster/ant-man-quantumania.webp' },
+    { name: 'Fast X', imgUrl: 'images/Poster/fast-x.jpg' },
+    { name: 'Indiana Jones and the Dial of Destiny', imgUrl: 'images/Poster/Indiana-Jones5.avif' },
+    { name: 'John Wick 4', imgUrl: 'images/Poster/john-wick-4.avif' },
+    { name: 'Mission: Impossible 7', imgUrl: 'images/Poster/mission-impossible.jpg' },
+    { name: 'Star Trek 4', imgUrl: 'images/Poster/Star-Trek-4.jpg' },
+    { name: 'Transformers: Rise of the Beasts', imgUrl: 'images/Poster/transformer.webp' },
+    { name: 'Ant-Man and the Wasp: Quantumania', imgUrl: 'images/Poster/ant-man-quantumania.webp' },
+    { name: 'Fast X', imgUrl: 'images/Poster/fast-x.jpg' }
+    
 ]
 export const availibility = {
     '21 Jump Street': [1, 2, 5, 8, 9,19,22,20,11],
