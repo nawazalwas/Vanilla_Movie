@@ -4,7 +4,7 @@ export const root = document.getElementById("root");
 
 
 
-root.append(App());
+root.append(App("home"));
 
 export function createElement(tag, attr = {}) {
     const ele = document.createElement(tag);

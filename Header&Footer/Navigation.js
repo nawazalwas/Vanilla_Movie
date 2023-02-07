@@ -1,8 +1,12 @@
-import { createElement } from "../main.js";
+import { Login } from "../Login&Signup/Login.js";
+import { createElement, root } from "../main.js";
 import { Sidebar } from "./Sidebar.js";
 
 
 export function Navigation() {
+    function handleLogin(e){
+        root.replaceChild(Login("Log In"),root.children[0]);
+    }
     const div1 = createElement("div", { class: "navigation" });
     {
         const div2$1 = createElement("div", { class: "navigation_container" });
@@ -25,12 +29,28 @@ export function Navigation() {
             {
                 const div4$1 = createElement("div", { class: "navigation_container_right_sidebar" });
                 {
-                    const button5 = createElement("button", {class: "navigation_container_right_sidebar_button", type: "button" });
+                    let i;
+                    const button5 = createElement("button", { class: "navigation_container_right_sidebar_button", type: "button" });
                     {
-                        const i6 = createElement("i", { class: "fa-sharp fa-solid fa-bars"});
+                        const i6 = i = createElement("i", { class: "fa-sharp fa-solid fa-bars" });
                         button5.append(i6);
                     }
                     div4$1.append(button5);
+                    button5.addEventListener("click", () => {
+                        const sidebar = Sidebar();
+                        div1.append(sidebar);
+                        function handleClose(e) {
+                            if (e.target.closest(".sidebar") == sidebar 
+                            || e.target == button5 
+                            || e.target == i) return;
+                            div1.removeChild(sidebar);
+                            root.removeEventListener("click", handleClose);
+
+                        }
+                        root.addEventListener("click", handleClose);
+
+
+                    });
 
                 }
                 const div4$2 = createElement("div", { class: "navigation_container_right_login" });
@@ -41,7 +61,7 @@ export function Navigation() {
                         {
                             const li7 = createElement("li");
                             {
-                                const a8 = createElement("a", { href: "index.html", class: "navigation_container_right_login_wrapper_link", "data-text": "sign up", "data-toggle": "modal", "data-target": "#myModal" });
+                                const a8 = createElement("a", { class: "navigation_container_right_login_wrapper_link", "data-text": "sign up", "data-toggle": "modal", "data-target": "#myModal" });
                                 {
                                     const span9$1 = createElement("span", { class: "navigation_container_right_login_wrapper_link_line1" });
                                     span9$1.innerHTML = "Hello Guest";
@@ -50,6 +70,7 @@ export function Navigation() {
                                     a8.append(span9$1, span9$2);
                                 }
                                 li7.append(a8);
+                                li7.addEventListener("click",handleLogin);
                             }
                             ul6.append(li7);
                         }
@@ -122,7 +143,7 @@ export function Navigation() {
             div2$2.append(nav3);
 
         }
-        div1.append(div2$1, div2$2,Sidebar());
+        div1.append(div2$1, div2$2);
     }
 
 
