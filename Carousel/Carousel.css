@@ -133,7 +133,7 @@
 
 @media (max-width: 1000px) {
   .slider {
-    --items-per-screen: 3;
+    --items-per-screen: 3 ;
   }
 }
 

@@ -1,7 +1,7 @@
 import { database } from "../api.js";
 import { Calender } from "./Calender.js";
 import { Carousel } from "../Carousel/Carousel.js";
-import { createElement } from "../main.js";
+import { context, createElement, x1000, x500, x700 } from "../main.js";
 import { Theaters } from "./Theaters.js";
 
 
@@ -13,6 +13,9 @@ import { Theaters } from "./Theaters.js";
 
 
 export function Details() {
+    context.carousol = [];
+
+
     const theaters_info = [["Ariesplex SL Cinemas-1", "Carnival: Artech Mall,Trivandrum", "Carnival: Greenfield,Trivandrum", "Carnival: Mall Of Travancore (Red Carpet)"]];
 
     Array(20).fill(-1).forEach((ele,idx)=>{
@@ -142,7 +145,15 @@ export function Details() {
                         arr.push(div);
                     });
                     //never assign one nodes to two differen parent
-                    div3.append(Carousel(ele.title, arr, 4, arr.length));
+                    if(x500.matches){
+                        div3.append(Carousel(ele.title, arr,2,arr.length,"catalog"));
+                    }else if(x700.matches){
+                        div3.append(Carousel(ele.title, arr,3,arr.length,"catalog"));
+                    }else if(x1000.matches){
+                        div3.append(Carousel(ele.title, arr,4,arr.length,"catalog"));
+                    }else{
+                        div3.append(Carousel(ele.title, arr,5,arr.length,"catalog"));
+                    };
                 }
                 div2$5.append(div3);
 

@@ -7,10 +7,8 @@ import { createElement } from "../main.js"
 import { TheaterHall } from "../TheaterHall/TheaterHall.js";
 
 
-
-
-
 export function App(route) {
+
     let appPage;
 
     function renderDetails() {
@@ -39,7 +37,8 @@ export function App(route) {
             div1.replaceChildren(Login("Sign Up"));
             return div1;
         case "hall":
-            div1.replaceChildren(Navigation(),TheaterHall());
+            div1.replaceChildren(TheaterHall());
+            div1.style.minWidth = "600px";
             return div1;
 
         default:

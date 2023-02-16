@@ -1,15 +1,21 @@
-import { createElement } from "../main.js";
+import { context , createElement, handleCarousel, x500 } from "../main.js";
 
 
-export function Carousel(title,imageArr = [],item_per_screen,length ) {
+
+
+
+export function Carousel(title, imageArr = [], item_per_screen, length, useFor) {
     //webdevsimplifited;
+    let carousolObj = {};
     let handle;
+    let progressBar;
+    let arrOfBarNodes = [];
+    let slider;
     let index = 0;
     let arrLength = length;
-    let bars = Math.ceil(arrLength/item_per_screen);
-    let arrOfBarNodes = [];
+    let bars = Math.ceil(arrLength / item_per_screen);
 
-    let slider;
+
 
     const div1 = createElement("div", { class: "row" });
     {
@@ -17,16 +23,27 @@ export function Carousel(title,imageArr = [],item_per_screen,length ) {
         {
             const h3$1 = createElement("h3", { class: "title" });
             h3$1.innerHTML = title;
-            const div3$2 = createElement("div", { class: "progress-bar" });
+            const div3$2 = progressBar = createElement("div", { class: "progress-bar" });
             {
-                Array(bars).fill(-1).forEach((ele,idx)=>{
-                    const div4 = createElement("div",{class:"progress-item"});
-                    if(idx == 0){
+                const arr = [];
+                Array(Math.ceil(arrLength / item_per_screen)).fill(-1).forEach((ele, idx) => {
+                    const div4 = createElement("div", { class: "progress-item" });
+                    if (idx == index) {
                         div4.classList.add("active");
                     }
-                    arrOfBarNodes[idx] = div4;
-                    div3$2.append(div4);
+                    arr[idx] = div4;
                 });
+                progressBar.replaceChildren(...arr);
+
+                carousolObj["arrOfBarNodes"] = arr;
+                carousolObj["progressBar"] = progressBar;
+                carousolObj["index"] = index;
+                carousolObj["length"] = length;
+                carousolObj["item_per_screen"] = item_per_screen;
+                carousolObj["useFor"] = useFor;
+
+
+
 
             }
             div2$1.append(h3$1, div3$2);
@@ -44,6 +61,10 @@ export function Carousel(title,imageArr = [],item_per_screen,length ) {
             {
                 /* --items - per - screen: 4;
                 --slider - index: 0; */
+
+                carousolObj["slider"] = slider;
+                
+
                 div3$2.style.setProperty('--items-per-screen', item_per_screen);
                 div3$2.style.setProperty('--slider-index', index);
                 div3$2.append(...imageArr);
@@ -56,6 +77,8 @@ export function Carousel(title,imageArr = [],item_per_screen,length ) {
             div2$2.append(button3$1, div3$2, button3$3);
         }
         const div2$3 = createElement("div", {});
+
+
         div1.append(div2$1, div2$2, div2$3);
     }
 
@@ -63,44 +86,47 @@ export function Carousel(title,imageArr = [],item_per_screen,length ) {
         if (e.target.matches(".handle")) {
             handle = e.target
         } else {
-            handle = e.target.closest(".handle")
+            handle = e.target.closest(".handle");
         }
         if (handle != null) {
-            index = onHandleClick(handle, slider,arrOfBarNodes, index, item_per_screen, arrLength)
+            index = onHandleClick(handle, carousolObj["slider"], carousolObj["arrOfBarNodes"], index, carousolObj["item_per_screen"], arrLength.length);
+            carousolObj["index"] = index;
         }
 
     });
 
+
+    context.carousol.push(carousolObj);
     return div1;
 
 
 }
 
 
-function onHandleClick(handle, slider,arrOfBarNodes, index, item_per_screen, length) {
-    let lastIndex = Math.ceil(length/item_per_screen)-1;
+function onHandleClick(handle, slider, arrOfBarNodes, index, item_per_screen, length) {
+    let lastIndex = arrOfBarNodes.length-1;
     arrOfBarNodes[index].classList.remove("active");
 
-
     if (handle.classList.contains("left-handle")) {
-        if(index <= 0){
-            slider.style.setProperty('--slider-index',lastIndex);
+        if (index <= 0) {
+            slider.style.setProperty('--slider-index', lastIndex);
             arrOfBarNodes[lastIndex].classList.add("active");
             return lastIndex;
         }
-        slider.style.setProperty('--slider-index', index-1);
-        arrOfBarNodes[index-1].classList.add("active");
-        return index-1;
+        slider.style.setProperty('--slider-index', index - 1);
+        arrOfBarNodes[index - 1].classList.add("active");
+        return index - 1;
     }
 
     if (handle.classList.contains("right-handle")) {
-        if(index >= lastIndex){
-            slider.style.setProperty('--slider-index',0);
+        if (index >= lastIndex) {
+            slider.style.setProperty('--slider-index', 0);
             arrOfBarNodes[0].classList.add("active");
+
             return 0;
         }
-        slider.style.setProperty('--slider-index', index+1);
-        arrOfBarNodes[index+1].classList.add("active");
-        return index+1;
+        slider.style.setProperty('--slider-index', index + 1);
+        arrOfBarNodes[index + 1].classList.add("active");
+        return index + 1;
     }
 }

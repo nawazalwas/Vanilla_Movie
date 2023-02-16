@@ -1,3 +1,4 @@
+import { Navigation } from "../Header&Footer/Navigation.js";
 import { createElement } from "../main.js";
 import { TheaterHallSection } from "./TheaterHallSection.js";
 
@@ -106,8 +107,10 @@ export function TheaterHall() {
             });
             div2$3.append(ul3);
         }
+        const div2 = Navigation();
+        div2.append(div2$3);
 
-        div1.append(div2$1, div2$2, div2$3);
+        div1.append(div2,div2$1, div2$2);
     }
 
     return div1;
